@@ -9,20 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
     "lenis": "^1.3.23",
     "lucide-react": "^0.395.0",
     "pngjs": "^7.0.0",
+    "postcss": "^8.4.39",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
-    "tailwind-merge": "^2.3.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.4",
     "vite": "^5.3.1"
   }
