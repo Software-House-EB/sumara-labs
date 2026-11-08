@@ -81,52 +81,60 @@ export default function PageTransition({ children }) {
             alt="Sumara Labs"
             className="h-9 w-auto object-contain opacity-90"
           />
+        </motion.div>
+      </motion.div>
+
+      {/* ========================================================
+          ENTER CURTAINS: Slide from CENTER (0%) to LEFT (-100%)
+          Triggered on page refresh / initial load & when new page mounts
+          ======================================================== */}
+      {/* Enter Layer 3: Studio Dark Background + Brand Center */}
+      <motion.div
+        className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] flex items-center justify-center pointer-events-none"
+        initial={{ x: '0%', display: 'flex' }}
+        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
+        transition={{
+          duration: 0.55,
+          ease: transitionEase,
+          delay: 0.08,
+        }}
+      >
+        <div className="flex flex-col items-center gap-3 select-none">
+          <img
+            src={logoWhite}
+            alt="Sumara Labs"
+            className="h-9 w-auto object-contain opacity-90"
+          />
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#1649FF] animate-pulse" />
             <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-zinc-400">
               Sumara Labs
             </span>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
-
-      {/* ========================================================
-          ENTER CURTAINS: Slide from CENTER (0%) to LEFT (-100%)
-          Triggered when new page mounts (continuing LEFT)
-          ======================================================== */}
-      {/* Enter Layer 3: Studio Dark Background */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] pointer-events-none"
-        initial={{ x: '0%' }}
-        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
-        transition={{
-          duration: 0.55,
-          ease: transitionEase,
-          delay: 0.05,
-        }}
-      />
 
       {/* Enter Layer 2: Deep Graphite */}
       <motion.div
         className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none"
-        initial={{ x: '0%' }}
+        initial={{ x: '0%', display: 'block' }}
         animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
         transition={{
           duration: 0.55,
           ease: transitionEase,
-          delay: 0.12,
+          delay: 0.15,
         }}
       />
 
       {/* Enter Layer 1: Electric Blue Accent */}
       <motion.div
         className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none"
-        initial={{ x: '0%' }}
+        initial={{ x: '0%', display: 'block' }}
         animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
         transition={{
           duration: 0.55,
           ease: transitionEase,
-          delay: 0.19,
+          delay: 0.22,
         }}
       />
 
