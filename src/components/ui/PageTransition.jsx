@@ -27,17 +27,17 @@ export default function PageTransition({ children }) {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full min-h-screen overflow-x-hidden">
       {/* ========================================================
           EXIT CURTAINS: Slide from RIGHT (100%) to CENTER (0%)
           Triggered when leaving the current page (moving LEFT)
           ======================================================== */}
       {/* Exit Layer 1: Electric Blue Accent */}
       <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none shadow-[-20px_0_50px_rgba(22,73,255,0.4)]"
-        initial={{ x: '100%' }}
-        animate={{ x: '100%' }}
-        exit={{ x: '0%' }}
+        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none"
+        initial={{ x: '100%', display: 'none' }}
+        animate={{ x: '100%', display: 'none' }}
+        exit={{ x: '0%', display: 'block' }}
         transition={{
           duration: 0.52,
           ease: transitionEase,
@@ -47,10 +47,10 @@ export default function PageTransition({ children }) {
 
       {/* Exit Layer 2: Deep Graphite / Zinc-900 */}
       <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none shadow-[-20px_0_50px_rgba(0,0,0,0.5)]"
-        initial={{ x: '100%' }}
-        animate={{ x: '100%' }}
-        exit={{ x: '0%' }}
+        className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none"
+        initial={{ x: '100%', display: 'none' }}
+        animate={{ x: '100%', display: 'none' }}
+        exit={{ x: '0%', display: 'block' }}
         transition={{
           duration: 0.52,
           ease: transitionEase,
@@ -61,9 +61,9 @@ export default function PageTransition({ children }) {
       {/* Exit Layer 3: Studio Dark Background + Brand Center */}
       <motion.div
         className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] flex items-center justify-center pointer-events-auto"
-        initial={{ x: '100%' }}
-        animate={{ x: '100%' }}
-        exit={{ x: '0%' }}
+        initial={{ x: '100%', display: 'none' }}
+        animate={{ x: '100%', display: 'none' }}
+        exit={{ x: '0%', display: 'flex' }}
         transition={{
           duration: 0.52,
           ease: transitionEase,
@@ -98,7 +98,7 @@ export default function PageTransition({ children }) {
       <motion.div
         className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] pointer-events-none"
         initial={{ x: '0%' }}
-        animate={{ x: '-100%' }}
+        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
         transition={{
           duration: 0.55,
           ease: transitionEase,
@@ -110,7 +110,7 @@ export default function PageTransition({ children }) {
       <motion.div
         className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none"
         initial={{ x: '0%' }}
-        animate={{ x: '-100%' }}
+        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
         transition={{
           duration: 0.55,
           ease: transitionEase,
@@ -120,9 +120,9 @@ export default function PageTransition({ children }) {
 
       {/* Enter Layer 1: Electric Blue Accent */}
       <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none shadow-[20px_0_50px_rgba(22,73,255,0.35)]"
+        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none"
         initial={{ x: '0%' }}
-        animate={{ x: '-100%' }}
+        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
         transition={{
           duration: 0.55,
           ease: transitionEase,
