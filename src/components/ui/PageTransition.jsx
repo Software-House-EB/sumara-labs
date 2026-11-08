@@ -29,108 +29,114 @@ export default function PageTransition({ children }) {
   return (
     <div className="relative w-full min-h-screen">
       {/* ========================================================
-          EXIT CURTAINS: Slide from RIGHT (100%) to CENTER (0%)
-          Triggered when leaving the current page (moving LEFT)
+          CURTAIN OVERLAY CONTAINER (CLIPS HORIZONTAL OVERFLOW)
+          Prevents horizontal scrollbars from off-screen panels
           ======================================================== */}
-      {/* Exit Layer 1: Electric Blue Accent */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none"
-        initial={{ x: '100%', display: 'none' }}
-        animate={{ x: '100%', display: 'none' }}
-        exit={{ x: '0%', display: 'block' }}
-        transition={{
-          duration: 0.52,
-          ease: transitionEase,
-          delay: 0,
-        }}
-      />
-
-      {/* Exit Layer 2: Deep Graphite / Zinc-900 */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none"
-        initial={{ x: '100%', display: 'none' }}
-        animate={{ x: '100%', display: 'none' }}
-        exit={{ x: '0%', display: 'block' }}
-        transition={{
-          duration: 0.52,
-          ease: transitionEase,
-          delay: 0.07,
-        }}
-      />
-
-      {/* Exit Layer 3: Studio Dark Background + Brand Center */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] flex items-center justify-center pointer-events-auto"
-        initial={{ x: '100%', display: 'none' }}
-        animate={{ x: '100%', display: 'none' }}
-        exit={{ x: '0%', display: 'flex' }}
-        transition={{
-          duration: 0.52,
-          ease: transitionEase,
-          delay: 0.14,
-        }}
-      >
+      <div className="fixed inset-0 pointer-events-none z-[9990] overflow-hidden">
+        {/* ========================================================
+            EXIT CURTAINS: Slide from RIGHT (100%) to CENTER (0%)
+            Triggered when leaving the current page (moving LEFT)
+            ======================================================== */}
+        {/* Exit Layer 1: Electric Blue Accent */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          exit={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.25, delay: 0.22, ease: 'easeOut' }}
-          className="flex flex-col items-center gap-3 select-none"
+          className="absolute inset-0 w-full h-full bg-[#1649FF] z-[9991]"
+          initial={{ x: '100%', display: 'none' }}
+          animate={{ x: '100%', display: 'none' }}
+          exit={{ x: '0%', display: 'block' }}
+          transition={{
+            duration: 0.52,
+            ease: transitionEase,
+            delay: 0,
+          }}
+        />
+
+        {/* Exit Layer 2: Deep Graphite / Zinc-900 */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-[#16171d] z-[9992]"
+          initial={{ x: '100%', display: 'none' }}
+          animate={{ x: '100%', display: 'none' }}
+          exit={{ x: '0%', display: 'block' }}
+          transition={{
+            duration: 0.52,
+            ease: transitionEase,
+            delay: 0.07,
+          }}
+        />
+
+        {/* Exit Layer 3: Studio Dark Background + Brand Center */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-[#09090b] z-[9993] flex items-center justify-center pointer-events-auto"
+          initial={{ x: '100%', display: 'none' }}
+          animate={{ x: '100%', display: 'none' }}
+          exit={{ x: '0%', display: 'flex' }}
+          transition={{
+            duration: 0.52,
+            ease: transitionEase,
+            delay: 0.14,
+          }}
         >
-          <img
-            src={logoWhite}
-            alt="Sumara Labs"
-            className="h-9 w-auto object-contain opacity-90"
-          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            exit={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.25, delay: 0.22, ease: 'easeOut' }}
+            className="flex flex-col items-center gap-3 select-none"
+          >
+            <img
+              src={logoWhite}
+              alt="Sumara Labs"
+              className="h-9 w-auto object-contain opacity-90"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* ========================================================
-          ENTER CURTAINS: Slide from CENTER (0%) to LEFT (-100%)
-          Triggered on page refresh / initial load & when new page mounts
-          ======================================================== */}
-      {/* Enter Layer 3: Studio Dark Background + Brand Center */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#09090b] z-[9993] flex items-center justify-center pointer-events-none"
-        initial={{ x: '0%', display: 'flex' }}
-        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
-        transition={{
-          duration: 0.55,
-          ease: transitionEase,
-          delay: 0.08,
-        }}
-      >
-        <div className="flex flex-col items-center gap-3 select-none">
-          <img
-            src={logoWhite}
-            alt="Sumara Labs"
-            className="h-9 w-auto object-contain opacity-90"
-          />
-        </div>
-      </motion.div>
+        {/* ========================================================
+            ENTER CURTAINS: Slide from CENTER (0%) to LEFT (-100%)
+            Triggered on page refresh / initial load & when new page mounts
+            ======================================================== */}
+        {/* Enter Layer 3: Studio Dark Background + Brand Center */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-[#09090b] z-[9993] flex items-center justify-center"
+          initial={{ x: '0%', display: 'flex' }}
+          animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
+          transition={{
+            duration: 0.55,
+            ease: transitionEase,
+            delay: 0.08,
+          }}
+        >
+          <div className="flex flex-col items-center gap-3 select-none">
+            <img
+              src={logoWhite}
+              alt="Sumara Labs"
+              className="h-9 w-auto object-contain opacity-90"
+            />
+          </div>
+        </motion.div>
 
-      {/* Enter Layer 2: Deep Graphite */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#16171d] z-[9992] pointer-events-none"
-        initial={{ x: '0%', display: 'block' }}
-        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
-        transition={{
-          duration: 0.55,
-          ease: transitionEase,
-          delay: 0.15,
-        }}
-      />
+        {/* Enter Layer 2: Deep Graphite */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-[#16171d] z-[9992]"
+          initial={{ x: '0%', display: 'block' }}
+          animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
+          transition={{
+            duration: 0.55,
+            ease: transitionEase,
+            delay: 0.15,
+          }}
+        />
 
-      {/* Enter Layer 1: Electric Blue Accent */}
-      <motion.div
-        className="fixed inset-y-0 left-0 w-full bg-[#1649FF] z-[9991] pointer-events-none"
-        initial={{ x: '0%', display: 'block' }}
-        animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
-        transition={{
-          duration: 0.55,
-          ease: transitionEase,
-          delay: 0.22,
-        }}
-      />
+        {/* Enter Layer 1: Electric Blue Accent */}
+        <motion.div
+          className="absolute inset-0 w-full h-full bg-[#1649FF] z-[9991]"
+          initial={{ x: '0%', display: 'block' }}
+          animate={{ x: '-100%', transitionEnd: { display: 'none' } }}
+          transition={{
+            duration: 0.55,
+            ease: transitionEase,
+            delay: 0.22,
+          }}
+        />
+      </div>
 
       {/* ========================================================
           PAGE CONTENT CONTAINER

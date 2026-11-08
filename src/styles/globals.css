@@ -9,6 +9,7 @@
     color: #0f0f11;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
+    overflow-x: clip;
   }
 
   ::selection {
@@ -16,9 +17,14 @@
     color: #ffffff;
   }
 
-  /* Minimalist subtle scrollbar */
+  /* Minimalist subtle scrollbar (vertical only) */
   ::-webkit-scrollbar {
     width: 8px;
+    height: 0px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    display: none !important;
+    height: 0px !important;
   }
   ::-webkit-scrollbar-track {
     background: #f4f4f5;
