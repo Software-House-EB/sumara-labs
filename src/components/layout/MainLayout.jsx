@@ -87,21 +87,21 @@ export default function MainLayout() {
             <Link
               to="/contact"
               aria-label="Contact Us"
-              className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0f0f11] text-white shadow-2xl shadow-black/40 border border-zinc-700/80 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95"
+              className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#0f0f11] shadow-lg shadow-black/5 border-2 border-[#0f0f11] hover:bg-zinc-50 transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              {/* Online Indicator Pulse Dot */}
+              {/* Online Indicator Pulse Dot (no border outline) */}
               <span className="absolute top-0 right-0 flex h-3.5 w-3.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-[#0f0f11]" />
+                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500" />
               </span>
 
-              {/* Solid 3-dot Chat Bubble Icon */}
-              <ChatBubbleIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-transform duration-300 group-hover:scale-110" />
+              {/* Solid 3-dot Chat Bubble Icon in Black */}
+              <ChatBubbleIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#0f0f11] transition-transform duration-300 group-hover:scale-110" />
 
               {/* Hover Tooltip Pill (Desktop) */}
-              <div className="absolute right-full mr-3 pointer-events-none opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-[#0f0f11] text-white text-xs font-medium px-3.5 py-1.5 rounded-full border border-zinc-700 shadow-xl whitespace-nowrap hidden sm:flex items-center gap-1.5">
+              <div className="absolute right-full mr-3 pointer-events-none opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 bg-white text-[#0f0f11] text-xs font-medium px-3.5 py-1.5 rounded-full border border-zinc-200 shadow-xl whitespace-nowrap hidden sm:flex items-center gap-1.5">
                 <span>Start a conversation</span>
-                <span className="text-[10px] text-zinc-400 font-mono">24h</span>
+                <span className="text-[10px] text-zinc-500 font-mono">24h</span>
               </div>
             </Link>
           </motion.div>

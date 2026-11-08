@@ -105,12 +105,6 @@ export default function PageTransition({ children }) {
             alt="Sumara Labs"
             className="h-9 w-auto object-contain opacity-90"
           />
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1649FF] animate-pulse" />
-            <span className="text-[11px] font-mono tracking-[0.25em] uppercase text-zinc-400">
-              Sumara Labs
-            </span>
-          </div>
         </div>
       </motion.div>
 
