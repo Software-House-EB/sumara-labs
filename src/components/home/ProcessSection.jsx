@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowUpRight } from 'lucide-react';
 
 const processSteps = [
@@ -44,95 +44,56 @@ const processSteps = [
 
 export default function ProcessSection() {
   const [openStep, setOpenStep] = useState(0);
-  const sectionRef = useRef(null);
-
-  // Scroll-linked progress for dynamic slide-down animation
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end end'],
-  });
-
-  // Smooth slide-down parallax translation for sticky left column
-  const leftSlideY = useTransform(scrollYProgress, [0, 1], [0, 70]);
 
   return (
-    <section
-      ref={sectionRef}
-      id="process"
-      className="py-16 sm:py-24 lg:py-28 bg-white relative"
-    >
+    <section id="process" className="py-16 sm:py-20 lg:py-24 bg-white relative">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* ========================================================
-              LEFT COLUMN: Sticky & Animates Slide Down with Scroll
+              LEFT COLUMN: Sticky headline & CTA (Aligns with bottom)
               ======================================================== */}
-          <div className="md:col-span-5 md:sticky md:top-32 lg:top-36 self-start z-10">
-            <motion.div
-              style={{ y: leftSlideY }}
-              className="space-y-6"
-            >
-              {/* Process Step Progress Bar */}
-              <div className="flex items-center gap-3">
-                <span className="text-xs font-mono font-medium uppercase tracking-widest text-[#1649FF]">
-                  [ Process Workflow ]
-                </span>
-                <div className="h-0.5 flex-1 max-w-[80px] bg-zinc-200 rounded-full overflow-hidden">
-                  <motion.div
-                    style={{ scaleX: scrollYProgress, transformOrigin: 'left' }}
-                    className="h-full bg-[#1649FF]"
-                  />
-                </div>
-              </div>
+          <div className="md:col-span-5 md:sticky md:top-28 lg:top-32 self-start space-y-6">
+            <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-[#0f0f11] leading-[1.12]">
+              A process built for efficient product development
+            </h2>
+            <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
+              Sumara Labs combines strategy, design, engineering, AI-assisted workflows, and post-launch support to move products from early idea to launch and beyond.
+            </p>
+            <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
+              Each step is shaped to reduce waste, keep decisions clear, and help teams build faster without losing product quality.
+            </p>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-medium tracking-tight text-[#0f0f11] leading-[1.12]">
-                A process built for efficient product development
-              </h2>
-              <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-                Sumara Labs combines strategy, design, engineering, AI-assisted workflows, and post-launch support to move products from early idea to launch and beyond.
-              </p>
-              <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-                Each step is shaped to reduce waste, keep decisions clear, and help teams build faster without losing product quality.
-              </p>
-
-              <div className="pt-4">
-                <Link
-                  to="/contact"
-                  className="btn-pill-primary group inline-flex"
-                >
-                  <span>Let's discuss your project</span>
-                  <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
-              </div>
-            </motion.div>
+            <div className="pt-4">
+              <Link
+                to="/contact"
+                className="btn-pill-primary group inline-flex"
+              >
+                <span>Let's discuss your project</span>
+                <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
           </div>
 
           {/* ========================================================
-              RIGHT COLUMN: Freely Scrollable Step-by-Step Accordion
+              RIGHT COLUMN: Clean FAQ-style Accordion Steps
               ======================================================== */}
           <div className="md:col-span-7 divide-y divide-zinc-200">
             {processSteps.map((step, idx) => {
               const isOpen = openStep === idx;
               return (
-                <div
-                  key={idx}
-                  className={`py-7 sm:py-9 transition-colors ${
-                    isOpen ? 'bg-zinc-50/50 rounded-2xl px-4 sm:px-6' : ''
-                  }`}
-                >
+                <div key={idx} className="py-6 sm:py-8 transition-colors">
                   <button
                     onClick={() => setOpenStep(isOpen ? -1 : idx)}
-                    className="w-full text-left flex items-start justify-between gap-4 group"
+                    className="w-full text-left flex items-start justify-between gap-4 group cursor-pointer"
                   >
                     <div className="flex items-baseline gap-4 sm:gap-6">
                       <span className={`text-sm font-mono font-medium transition-colors ${
-                        isOpen ? 'text-[#1649FF] font-semibold' : 'text-zinc-400'
+                        isOpen ? 'text-[#1649FF]' : 'text-zinc-400'
                       }`}>
                         {step.number}
                       </span>
                       <div>
-                        <h3 className={`text-xl sm:text-2xl font-medium transition-colors ${
-                          isOpen ? 'text-[#0f0f11] font-semibold' : 'text-[#0f0f11] group-hover:text-[#1649FF]'
-                        }`}>
+                        <h3 className="text-xl sm:text-2xl font-medium text-[#0f0f11] group-hover:text-[#1649FF] transition-colors">
                           {step.title}
                         </h3>
                         <div className="flex flex-wrap gap-2 mt-2">
@@ -148,11 +109,7 @@ export default function ProcessSection() {
                       </div>
                     </div>
 
-                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 mt-1 ${
-                      isOpen
-                        ? 'border-[#0f0f11] bg-[#0f0f11] text-white'
-                        : 'border-zinc-300 text-zinc-600 group-hover:border-black'
-                    }`}>
+                    <div className="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center text-zinc-500 group-hover:border-zinc-900 group-hover:text-zinc-900 shrink-0 transition-colors mt-1">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </div>
                   </button>
@@ -166,7 +123,7 @@ export default function ProcessSection() {
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-5 pl-8 sm:pl-12 text-sm sm:text-base text-[#55555c] leading-relaxed">
+                        <div className="pt-4 pl-8 sm:pl-12 text-sm sm:text-base text-[#55555c] leading-relaxed">
                           {step.desc}
                         </div>
                       </motion.div>
