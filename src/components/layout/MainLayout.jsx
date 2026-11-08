@@ -45,7 +45,7 @@ export default function MainLayout() {
   return (
     <div className="flex min-h-screen flex-col bg-[#09090b] text-[#f4f4f5] antialiased selection:bg-primary-600 selection:text-white">
       <Navbar />
-      <main className="flex-1 w-full overflow-x-hidden" id="main-content">
+      <main className="flex-1 w-full" id="main-content">
         <AnimatePresence mode="wait" initial={true}>
           {element && (
             <PageTransition key={location.pathname}>

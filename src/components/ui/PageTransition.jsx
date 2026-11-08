@@ -27,7 +27,7 @@ export default function PageTransition({ children }) {
   }, []);
 
   return (
-    <div className="relative w-full min-h-screen overflow-x-hidden">
+    <div className="relative w-full min-h-screen">
       {/* ========================================================
           EXIT CURTAINS: Slide from RIGHT (100%) to CENTER (0%)
           Triggered when leaving the current page (moving LEFT)
