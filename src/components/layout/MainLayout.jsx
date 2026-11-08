@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { Outlet, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useOutlet } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import PageTransition from '../ui/PageTransition';
 
 // Solid 3-dot chat bubble icon matching user reference
 function ChatBubbleIcon({ className = "w-5 h-5 sm:w-6 sm:h-6" }) {
@@ -26,6 +27,7 @@ function ChatBubbleIcon({ className = "w-5 h-5 sm:w-6 sm:h-6" }) {
 
 export default function MainLayout() {
   const location = useLocation();
+  const element = useOutlet();
   const lenisRef = useRef(null);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export default function MainLayout() {
     });
 
     lenisRef.current = lenis;
+    window.__lenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -51,16 +54,9 @@ export default function MainLayout() {
     return () => {
       lenis.destroy();
       lenisRef.current = null;
+      window.__lenis = null;
     };
   }, []);
-
-  useEffect(() => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [location.pathname]);
 
   const isContactPage = location.pathname === '/contact';
 
@@ -68,7 +64,13 @@ export default function MainLayout() {
     <div className="flex min-h-screen flex-col bg-[#09090b] text-[#f4f4f5] antialiased selection:bg-primary-600 selection:text-white">
       <Navbar />
       <main className="flex-1 w-full" id="main-content">
-        <Outlet />
+        <AnimatePresence mode="wait" initial={false}>
+          {element && (
+            <PageTransition key={location.pathname}>
+              {element}
+            </PageTransition>
+          )}
+        </AnimatePresence>
       </main>
       <Footer />
 
