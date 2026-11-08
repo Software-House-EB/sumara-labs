@@ -10,6 +10,7 @@ import {
   Linkedin,
   Github,
   MessageCircle,
+  Clock,
   X
 } from 'lucide-react';
 
@@ -44,23 +45,60 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 sm:pt-36 md:pt-44 pb-20 sm:pb-28 bg-white text-[#0f0f11]">
-      <div className="section-container">
-        {/* Header Section */}
-        <div className="max-w-[1000px] mb-12 sm:mb-16 space-y-4">
-          <p className="text-sm sm:text-base text-[#8e8e93] font-semibold tracking-wide">
-            [ CONTACT US ]
-          </p>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight text-[#0f0f11] leading-[1.08]">
+    <div className="bg-[#fcfcfd] min-h-screen">
+      {/* Top Blue Hero Section with Organic Flowing Wave Shapes (Matching Reference) */}
+      <div className="relative bg-[#1649FF] text-white pt-32 sm:pt-40 md:pt-44 pb-36 sm:pb-44 md:pb-52 overflow-hidden">
+        {/* Layered fluid wave shapes & subtle ambient light */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          {/* Subtle gradient depth */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0c39d8] via-[#1649FF] to-[#1e58ff]" />
+
+          {/* Organic wave shape 1 */}
+          <svg
+            className="absolute -top-24 -right-24 w-[750px] h-[750px] text-white/[0.05] transform rotate-12"
+            viewBox="0 0 600 600"
+            fill="currentColor"
+          >
+            <path d="M300,50 C450,50 550,150 550,300 C550,450 450,550 300,550 C150,550 50,450 50,300 C50,150 150,50 300,50 Z" />
+          </svg>
+
+          {/* Organic wave shape 2 */}
+          <svg
+            className="absolute -bottom-24 -left-24 w-[650px] h-[650px] text-black/[0.08]"
+            viewBox="0 0 600 600"
+            fill="currentColor"
+          >
+            <path d="M300,100 C420,100 520,200 520,300 C520,420 420,520 300,520 C180,520 80,420 80,300 C80,180 180,100 300,100 Z" />
+          </svg>
+
+          {/* Flowing ribbon waves in reference background style */}
+          <svg
+            className="absolute top-1/2 left-0 w-full h-64 -translate-y-1/2 text-white/[0.04]"
+            viewBox="0 0 1440 320"
+            fill="currentColor"
+            preserveAspectRatio="none"
+          >
+            <path d="M0,160 C320,300 420,0 720,160 C1020,320 1120,40 1440,160 L1440,320 L0,320 Z" />
+          </svg>
+        </div>
+
+        {/* Hero Content */}
+        <div className="section-container relative z-10 text-center max-w-[840px] mx-auto space-y-4">
+          <span className="inline-block text-xs font-mono uppercase tracking-widest text-white/80 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/15">
+            [ Start a Conversation ]
+          </span>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-white leading-[1.08]">
             Get In Touch
           </h1>
-          <p className="text-base sm:text-lg text-[#55555c] max-w-[660px] leading-relaxed">
+          <p className="text-base sm:text-lg text-white/85 max-w-[620px] mx-auto leading-relaxed">
             Have an ambitious idea, need an MVP launched rapidly, or looking for a dedicated engineering squad? Leave your details below and our lead architect will reach out within 24 hours.
           </p>
         </div>
+      </div>
 
-        {/* Dual Split Card Container */}
-        <div className="max-w-[1140px] mx-auto rounded-[28px] sm:rounded-[36px] bg-white border border-zinc-200/90 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+      {/* Main Content: Floating Split Dual-Card Container (Overlapping Blue Hero) */}
+      <div className="section-container relative z-20 -mt-24 sm:-mt-28 md:-mt-36 pb-24 sm:pb-32">
+        <div className="max-w-[1140px] mx-auto rounded-[28px] sm:rounded-[36px] bg-white border border-zinc-200/90 shadow-[0_25px_80px_-20px_rgba(0,0,0,0.12)] overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Send a Message Form */}
           <div className="lg:col-span-7 p-7 sm:p-10 md:p-12 bg-white flex flex-col justify-between">
             {submitted ? (
@@ -129,7 +167,7 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                {/* Inputs Stack */}
+                {/* Inputs Stack (Clean Underline Style Matching Reference) */}
                 <div className="space-y-6">
                   {/* Row 1: First Name & Last Name */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
@@ -234,15 +272,15 @@ export default function ContactPage() {
             )}
           </div>
 
-          {/* Right Column: Contact Info (Dark Card) */}
+          {/* Right Column: Contact Info (Dark Card - Clean without map) */}
           <div className="lg:col-span-5 p-7 sm:p-10 md:p-12 bg-[#0c0d10] text-white flex flex-col justify-between relative overflow-hidden">
             {/* Subtle decorative background glow */}
             <div
-              className="absolute -top-24 -right-24 w-60 h-60 rounded-full bg-[#1649FF]/15 blur-3xl pointer-events-none"
+              className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#1649FF]/20 blur-3xl pointer-events-none"
               aria-hidden="true"
             />
             <div
-              className="absolute -bottom-24 -left-24 w-60 h-60 rounded-full bg-[#1649FF]/10 blur-3xl pointer-events-none"
+              className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-[#1649FF]/10 blur-3xl pointer-events-none"
               aria-hidden="true"
             />
 
@@ -253,11 +291,11 @@ export default function ContactPage() {
                   Contact Info
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-400 mt-1">
-                  Reach out directly through any channel.
+                  Direct channels to our engineering leadership.
                 </p>
               </div>
 
-              {/* Contact list */}
+              {/* Contact rows */}
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start gap-4">
@@ -305,12 +343,42 @@ export default function ContactPage() {
                     </span>
                   </div>
                 </div>
+
+                {/* Office Hubs */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#1649FF]">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block mb-0.5">
+                      Office Hubs
+                    </span>
+                    <p className="text-sm text-zinc-200">
+                      <strong className="text-white font-medium">Prague:</strong> Mezibranská 1668/5, New Town, 111 00 Prague 1
+                    </p>
+                    <p className="text-xs text-zinc-400">
+                      <strong className="text-zinc-300 font-medium">Jakarta:</strong> Southeast Asia Software House & Operations
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Social Channels */}
+              {/* Working Hours / Availability Tag */}
+              <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2.5 text-zinc-300">
+                  <Clock className="w-4 h-4 text-[#1649FF]" />
+                  <span>Response SLA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-zinc-200 font-medium">&lt; 24h Guaranteed</span>
+                </div>
+              </div>
+
+              {/* Social Channels (Circular Badges Matching Reference) */}
               <div className="pt-2">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 block mb-3">
-                  Social Channels
+                  Connect With Us
                 </span>
                 <div className="flex items-center gap-3">
                   <a
@@ -351,81 +419,6 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-            </div>
-
-            {/* Stylized Map Preview Card (Prague & Jakarta Hubs) */}
-            <div className="relative z-10 pt-8 mt-4">
-              <a
-                href="https://maps.google.com/?q=Mezibransk%C3%A1+1668/5,+Prague"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-[20px] overflow-hidden border border-white/15 bg-[#14151b] hover:border-white/30 transition-all duration-300 relative"
-              >
-                {/* Stylized Vector Map Preview Graphic */}
-                <div className="h-32 sm:h-36 w-full relative overflow-hidden bg-[#181a22]">
-                  {/* Subtle map road lines and water paths */}
-                  <svg
-                    className="w-full h-full object-cover opacity-60"
-                    viewBox="0 0 320 160"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    {/* Background grid */}
-                    <rect width="320" height="160" fill="#151720" />
-                    {/* Water body */}
-                    <path
-                      d="M-20 60 C40 50, 80 90, 150 70 C220 50, 260 85, 340 75 L340 120 C260 130, 200 95, 140 115 C80 135, 30 100, -20 110 Z"
-                      fill="#1b2438"
-                    />
-                    {/* Green park / zone */}
-                    <path
-                      d="M180 20 C210 15, 240 30, 245 55 C230 65, 190 70, 175 45 Z"
-                      fill="#1c2d28"
-                    />
-                    {/* Secondary roads */}
-                    <path d="M-10 30 L330 30" stroke="#252836" strokeWidth="2.5" />
-                    <path d="M-10 130 L330 130" stroke="#252836" strokeWidth="2.5" />
-                    <path d="M60 -10 L60 170" stroke="#252836" strokeWidth="2" />
-                    <path d="M260 -10 L260 170" stroke="#252836" strokeWidth="2" />
-                    <path d="M0 100 L320 20" stroke="#232734" strokeWidth="1.5" />
-                    {/* Main artery road */}
-                    <path
-                      d="M-10 80 Q120 75 160 50 T330 40"
-                      stroke="#32384a"
-                      strokeWidth="3.5"
-                    />
-                    <path
-                      d="M160 -10 L160 170"
-                      stroke="#353b4e"
-                      strokeWidth="3"
-                    />
-                  </svg>
-
-                  {/* Pulsing Pin Marker */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-                    <span className="absolute w-8 h-8 rounded-full bg-[#1649FF]/30 animate-ping" />
-                    <div className="relative w-8 h-8 rounded-full bg-[#1649FF] text-white flex items-center justify-center shadow-lg shadow-blue-500/50">
-                      <MapPin className="w-4 h-4 fill-white" />
-                    </div>
-                  </div>
-
-                  {/* Overlay pill tag */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between px-3 py-1.5 rounded-xl bg-[#0c0d10]/90 backdrop-blur-md border border-white/10 text-xs text-white">
-                    <span className="font-medium truncate pr-2">
-                      Prague & Jakarta Hubs
-                    </span>
-                    <span className="text-[11px] text-[#1649FF] font-semibold flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform shrink-0">
-                      Open Maps <ArrowUpRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </div>
-
-                {/* Address caption */}
-                <div className="px-4 py-3 bg-[#101217] border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
-                  <span className="truncate">Mezibranská 1668/5, Prague 1</span>
-                  <span className="font-mono text-[10px] text-zinc-500 shrink-0 ml-2">HQ</span>
-                </div>
-              </a>
             </div>
           </div>
         </div>

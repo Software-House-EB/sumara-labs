@@ -47,6 +47,9 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const location = useLocation();
 
+  const isContactPage = location.pathname === '/contact';
+  const isDarkHeader = isContactPage && !isScrolled;
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -106,7 +109,7 @@ export default function Navbar() {
           {/* Shakuro-Style Brand Logo */}
           <Link to="/" className="flex items-center gap-2 group py-1">
             <img
-              src={logoDark}
+              src={isDarkHeader ? logoWhite : logoDark}
               alt="Sumara Labs"
               className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -117,7 +120,11 @@ export default function Navbar() {
             {/* "Get in touch" Pill Button */}
             <Link
               to="/contact"
-              className="group/btn hidden sm:inline-flex items-center justify-center h-9 sm:h-10 rounded-[48px] bg-[#0f0f11] text-white hover:bg-black px-4 sm:px-5 text-xs sm:text-[13px] font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/15 active:translate-y-0 active:scale-95"
+              className={`group/btn hidden sm:inline-flex items-center justify-center h-9 sm:h-10 rounded-[48px] px-4 sm:px-5 text-xs sm:text-[13px] font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-95 ${
+                isDarkHeader
+                  ? 'bg-white text-[#0f0f11] hover:bg-zinc-100 hover:shadow-white/20'
+                  : 'bg-[#0f0f11] text-white hover:bg-black hover:shadow-black/15'
+              }`}
             >
               <RollingText text="Get in touch" />
             </Link>
@@ -126,7 +133,11 @@ export default function Navbar() {
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle navigation menu"
-              className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-zinc-200 hover:border-black flex items-center justify-center transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/15 group bg-white/90 backdrop-blur-sm active:translate-y-0 active:scale-95 overflow-hidden"
+              className={`relative w-9 h-9 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg group backdrop-blur-sm active:translate-y-0 active:scale-95 overflow-hidden ${
+                isDarkHeader
+                  ? 'border-white/30 hover:border-white bg-white/10 text-white hover:shadow-white/20'
+                  : 'border-zinc-200 hover:border-black bg-white/90 text-[#0f0f11] hover:shadow-black/15'
+              }`}
             >
               {/* Dynamic Expanding Fill Layer (Alt-Button Style - Origin from Bottom Center) */}
               <span
@@ -141,14 +152,14 @@ export default function Navbar() {
                   className={`absolute left-0 right-0 h-[2px] rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     menuOpen
                       ? 'bg-white top-1/2 -translate-y-1/2 rotate-45'
-                      : 'bg-[#0f0f11] group-hover:bg-white top-0 group-hover:-translate-y-[1px]'
+                      : `${isDarkHeader ? 'bg-white' : 'bg-[#0f0f11]'} group-hover:bg-white top-0 group-hover:-translate-y-[1px]`
                   }`}
                 />
                 <span
                   className={`absolute left-0 right-0 h-[2px] rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     menuOpen
                       ? 'bg-white bottom-1/2 translate-y-1/2 -rotate-45'
-                      : 'bg-[#0f0f11] group-hover:bg-white bottom-0 group-hover:translate-y-[1px]'
+                      : `${isDarkHeader ? 'bg-white' : 'bg-[#0f0f11]'} group-hover:bg-white bottom-0 group-hover:translate-y-[1px]`
                   }`}
                 />
               </div>
