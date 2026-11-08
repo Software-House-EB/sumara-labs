@@ -140,13 +140,13 @@ export default function PageTransition({ children }) {
 
       {/* ========================================================
           PAGE CONTENT CONTAINER
-          Gently pushes left on exit, reveals on enter
+          Clean opacity fade without edge scaling/shifting
           ======================================================== */}
       <motion.div
-        initial={{ opacity: 0.9, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0.7, x: -30, scale: 0.99 }}
-        transition={{ duration: 0.45, ease: transitionEase }}
+        initial={{ opacity: 0.95 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0.8 }}
+        transition={{ duration: 0.4, ease: transitionEase }}
         className="w-full"
       >
         {children}

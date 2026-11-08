@@ -10,10 +10,10 @@ const ContactPage = lazy(() => import('../pages/contact/ContactPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
 
 const PageLoader = () => (
-  <div className="flex min-h-screen items-center justify-center bg-[#09090b]">
+  <div className="flex min-h-screen items-center justify-center bg-white">
     <div className="flex flex-col items-center gap-3">
-      <div className="w-10 h-10 border-2 border-primary-500/20 border-t-primary-500 rounded-full animate-spin" />
-      <span className="text-xs font-mono text-zinc-400">Sumara Labs Studio</span>
+      <div className="w-10 h-10 border-2 border-[#1649FF]/20 border-t-[#1649FF] rounded-full animate-spin" />
+      <span className="text-xs font-mono text-zinc-500">Sumara Labs Studio</span>
     </div>
   </div>
 );
