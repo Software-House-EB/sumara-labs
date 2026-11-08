@@ -56,40 +56,25 @@ export default function MainLayout() {
       </main>
       <Footer />
 
-      {/* Floating Live Studio Status Capsule (Bottom-Right, hidden on Contact page) */}
+      {/* Floating CTA Button (Bottom-Right, hidden on Contact page) */}
       <AnimatePresence>
         {!isContactPage && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40"
+            exit={{ opacity: 0, scale: 0.9, y: 16 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40"
           >
             <Link
               to="/contact"
-              aria-label="Available for projects - Let's talk"
-              className="group relative flex items-center gap-2.5 sm:gap-3 h-10 sm:h-12 pl-3.5 pr-4 sm:pl-4 sm:pr-5 rounded-[48px] bg-white/95 backdrop-blur-md text-[#0f0f11] border border-zinc-200/90 shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-black/10 hover:border-zinc-300 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
+              aria-label="Let's talk"
+              className="group relative inline-flex items-center gap-1.5 h-9 sm:h-10 px-4 sm:px-4.5 rounded-[48px] bg-white/95 backdrop-blur-md text-[#0f0f11] border border-zinc-200/90 shadow-md shadow-black/5 hover:border-black hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
             >
-              {/* Live Availability Beacon */}
-              <div className="flex items-center gap-2">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                </span>
-                <span className="text-[12px] sm:text-[13px] font-medium text-zinc-600 hidden xs:inline sm:inline">
-                  Available for projects
-                </span>
-              </div>
-
-              {/* Subtle Divider */}
-              <span className="w-px h-3.5 bg-zinc-200" aria-hidden="true" />
-
-              {/* Action Callout */}
-              <div className="flex items-center gap-1 font-semibold text-[12px] sm:text-[13px] text-[#0f0f11] group-hover:text-black">
-                <span>Let's talk</span>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </div>
+              <span className="text-xs sm:text-[13px] font-medium leading-none">
+                Let's talk
+              </span>
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </motion.div>
         )}
