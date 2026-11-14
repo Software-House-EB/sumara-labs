@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import logoDark from '../../assets/images/main-logo.png';
+
+const placeholderLogos = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const testimonials = [
   {
@@ -126,6 +129,32 @@ export default function SocialProofBar() {
                   </div>
                 </motion.div>
               </AnimatePresence>
+            </div>
+          </div>
+        </div>
+
+        {/* Trusted By: Auto Infinite Horizontal Scrolling Marquee */}
+        <div className="mt-14 sm:mt-18 pt-10 sm:pt-14 border-t border-zinc-100">
+          <p className="text-center text-xs font-mono uppercase tracking-widest text-[#8e8e93] mb-8">
+            Trusted by fast-growing startups and digital brands
+          </p>
+
+          {/* Marquee Wrapper with smooth side gradient fades */}
+          <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_64px,_black_calc(100%-64px),transparent_100%)]">
+            <div className="flex items-center gap-14 sm:gap-20 w-max animate-marquee">
+              {/* Duplicate array for seamless infinite looping */}
+              {[...placeholderLogos, ...placeholderLogos].map((_, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-center shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default px-2"
+                >
+                  <img
+                    src={logoDark}
+                    alt="Partner logo"
+                    className="h-6 sm:h-7 w-auto object-contain select-none"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
