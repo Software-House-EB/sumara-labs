@@ -48,10 +48,10 @@ export default function ProcessSection() {
               ======================================================== */}
           <div className="md:col-span-5 space-y-6">
             <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-[#0f0f11] leading-[1.12]">
-              A process built for efficient product development
+              How we bring your ideas to life
             </h2>
             <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-              If you want to know how we build, here is how we work: implementing software development best practices to deliver fast, clean, and reliable results.
+              No complicated jargon or endless delays. We follow modern software development best practices to make building your product smooth, fast, and hassle-free.
             </p>
 
             <div className="pt-2">
