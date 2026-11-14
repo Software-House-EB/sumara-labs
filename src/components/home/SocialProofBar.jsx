@@ -134,9 +134,9 @@ export default function SocialProofBar() {
         </div>
 
         {/* Trusted By: Auto Infinite Horizontal Scrolling Marquee */}
-        <div className="mt-14 sm:mt-18 pt-10 sm:pt-14 border-t border-zinc-100">
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-[#8e8e93] mb-8">
-            Trusted by fast-growing startups and digital brands
+        <div className="mt-14 sm:mt-18 pt-10 sm:pt-14">
+          <p className="text-center text-sm sm:text-base text-[#8e8e93] font-semibold mb-12 sm:mb-16">
+            Trusted by
           </p>
 
           {/* Marquee Wrapper with smooth side gradient fades */}
