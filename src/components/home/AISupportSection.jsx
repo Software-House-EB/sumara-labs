@@ -28,7 +28,8 @@ export default function AISupportSection() {
                 AI in the delivery process
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                We use AI for rapid prototyping and QA, helping you ship clean products weeks ahead of schedule.
+                We use AI for rapid prototyping and QA. We can deliver to you in{' '}
+                <span className="text-[#1649FF] font-medium">less than a day</span>.
               </p>
             </div>
             <div>
