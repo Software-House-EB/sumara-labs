@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sparkles, Rocket, Code2, Palette, Zap, Layers } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function PortfolioPage() {
   return (
@@ -18,26 +18,6 @@ export default function PortfolioPage() {
 
         {/* Fun Empty State */}
         <div className="max-w-[860px] mx-auto pt-4 sm:pt-8">
-          {/* Animated icon cluster */}
-          <div className="flex items-center justify-center gap-3 sm:gap-5 mb-10 sm:mb-14">
-            {[
-              { Icon: Rocket, bg: 'bg-blue-50', border: 'border-blue-100', text: 'text-[#1649FF]', delay: '0ms' },
-              { Icon: Code2, bg: 'bg-amber-50', border: 'border-amber-100', text: 'text-amber-500', delay: '100ms' },
-              { Icon: Palette, bg: 'bg-violet-50', border: 'border-violet-100', text: 'text-violet-500', delay: '200ms' },
-              { Icon: Sparkles, bg: 'bg-emerald-50', border: 'border-emerald-100', text: 'text-emerald-500', delay: '300ms' },
-              { Icon: Zap, bg: 'bg-rose-50', border: 'border-rose-100', text: 'text-rose-500', delay: '400ms' },
-              { Icon: Layers, bg: 'bg-cyan-50', border: 'border-cyan-100', text: 'text-cyan-500', delay: '500ms' },
-            ].map(({ Icon, bg, border, text, delay }, i) => (
-              <div
-                key={i}
-                className={`w-11 h-11 sm:w-14 sm:h-14 rounded-2xl ${bg} border ${border} flex items-center justify-center ${text} animate-bounce`}
-                style={{ animationDelay: delay }}
-              >
-                <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
-            ))}
-          </div>
-
           {/* Main message */}
           <div className="text-center space-y-4 max-w-[680px] mx-auto mb-10 sm:mb-14">
             <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#0f0f11] leading-[1.15]">
