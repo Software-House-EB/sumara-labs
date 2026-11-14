@@ -51,13 +51,10 @@ export default function ProcessSection() {
               A process built for efficient product development
             </h2>
             <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-              Sumara Labs combines strategy, design, engineering, AI-assisted workflows, and post-launch support to move products from early idea to launch and beyond.
-            </p>
-            <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-              Each step is shaped to reduce waste, keep decisions clear, and help teams build faster without losing product quality.
+              If you want to know how we build, here is how we work: implementing software development best practices to deliver fast, clean, and reliable results.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-2">
               <Link
                 to="/contact"
                 className="btn-pill-primary group inline-flex"

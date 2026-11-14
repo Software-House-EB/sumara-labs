@@ -26,7 +26,7 @@ export default function HomePage() {
       <AISupportSection />
 
       {/* 06. Commitment to Innovative Solutions (Industry Pills & Numbers) */}
-      <CommitmentSection />
+      {/* <CommitmentSection /> */}
 
       {/* 07. Process Built for Efficient Product Development */}
       <ProcessSection />
