@@ -1,172 +1,80 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
-import { projectsData } from '../../data/projectsData';
+import { ArrowUpRight, Sparkles, Rocket, Code2, Palette } from 'lucide-react';
 
-export default function FeaturedWorks({ onSelectProject }) {
-  // Take top 4 flagship case studies
-  const featuredCases = projectsData.slice(0, 4);
-
+export default function FeaturedWorks() {
   return (
     <section id="selected-work" className="py-14 sm:py-20 lg:py-24 bg-white relative">
       <div className="section-container">
-        {/* Shakuro Staggered 2-Column Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14">
-          {/* Column 1 (Normal flow) */}
-          <div className="flex flex-col gap-10 sm:gap-12 lg:gap-16">
-            {/* Project 1 */}
-            <article
-              onClick={() => onSelectProject(featuredCases[0])}
-              className="group cursor-pointer flex flex-col gap-4 sm:gap-5"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-[#f2f5f7]">
-                <img
-                  src={featuredCases[0].image}
-                  alt={featuredCases[0].title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 shadow-md">
-                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-[3px] rounded-full bg-blue-500 shrink-0 self-stretch" />
-                <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#55555c]">
-                  <span className="font-semibold text-zinc-950 uppercase">{featuredCases[0].category}</span>
-                  <span>•</span>
-                  <span>{featuredCases[0].client}</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-[#0f0f11] group-hover:text-primary transition-colors leading-snug">
-                  {featuredCases[0].title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#55555c] leading-relaxed line-clamp-2">
-                  {featuredCases[0].description}
-                </p>
-              </div>
-              </div>
-            </article>
-
-            {/* Project 3 */}
-            <article
-              onClick={() => onSelectProject(featuredCases[2])}
-              className="group cursor-pointer flex flex-col gap-4 sm:gap-5"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-[#f2f5f7]">
-                <img
-                  src={featuredCases[2].image}
-                  alt={featuredCases[2].title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 shadow-md">
-                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-[3px] rounded-full bg-blue-500 shrink-0 self-stretch" />
-                <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#55555c]">
-                  <span className="font-semibold text-zinc-950 uppercase">{featuredCases[2].category}</span>
-                  <span>•</span>
-                  <span>{featuredCases[2].client}</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-[#0f0f11] group-hover:text-primary transition-colors leading-snug">
-                  {featuredCases[2].title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#55555c] leading-relaxed line-clamp-2">
-                  {featuredCases[2].description}
-                </p>
-              </div>
-              </div>
-            </article>
+        {/* Playful "Coming Soon" Empty State */}
+        <div className="max-w-[920px] mx-auto text-center space-y-6 py-8 sm:py-12">
+          {/* Floating animated icons row */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mb-2">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#1649FF] animate-bounce [animation-delay:0ms]">
+              <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-500 animate-bounce [animation-delay:150ms]">
+              <Code2 className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-violet-50 border border-violet-100 flex items-center justify-center text-violet-500 animate-bounce [animation-delay:300ms]">
+              <Palette className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-500 animate-bounce [animation-delay:450ms]">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
           </div>
 
-          {/* Column 2 (Staggered offset downward on desktop for Shakuro masonry look!) */}
-          <div className="flex flex-col gap-10 sm:gap-12 lg:gap-16 md:pt-14 lg:pt-20">
-            {/* Project 2 */}
-            <article
-              onClick={() => onSelectProject(featuredCases[1])}
-              className="group cursor-pointer flex flex-col gap-4 sm:gap-5"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-[#f2f5f7]">
-                <img
-                  src={featuredCases[1].image}
-                  alt={featuredCases[1].title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 shadow-md">
-                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-[3px] rounded-full bg-blue-500 shrink-0 self-stretch" />
-                <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#55555c]">
-                  <span className="font-semibold text-zinc-950 uppercase">{featuredCases[1].category}</span>
-                  <span>•</span>
-                  <span>{featuredCases[1].client}</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-[#0f0f11] group-hover:text-primary transition-colors leading-snug">
-                  {featuredCases[1].title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#55555c] leading-relaxed line-clamp-2">
-                  {featuredCases[1].description}
-                </p>
-              </div>
-              </div>
-            </article>
-
-            {/* Project 4 */}
-            <article
-              onClick={() => onSelectProject(featuredCases[3])}
-              className="group cursor-pointer flex flex-col gap-4 sm:gap-5"
-            >
-              <div className="relative aspect-square w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-[#f2f5f7]">
-                <img
-                  src={featuredCases[3].image}
-                  alt={featuredCases[3].title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100 shadow-md">
-                  <ArrowUpRight className="w-4 h-4 text-zinc-950" />
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-[3px] rounded-full bg-blue-500 shrink-0 self-stretch" />
-                <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#55555c]">
-                  <span className="font-semibold text-zinc-950 uppercase">{featuredCases[3].category}</span>
-                  <span>•</span>
-                  <span>{featuredCases[3].client}</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-[#0f0f11] group-hover:text-primary transition-colors leading-snug">
-                  {featuredCases[3].title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#55555c] leading-relaxed line-clamp-2">
-                  {featuredCases[3].description}
-                </p>
-              </div>
-              </div>
-            </article>
+          <div className="space-y-3">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#0f0f11] leading-[1.1]">
+              Something amazing is<br className="hidden sm:block" /> in the making
+            </h2>
+            <p className="text-base sm:text-lg text-[#55555c] leading-relaxed max-w-[560px] mx-auto">
+              Our team is heads-down crafting extraordinary digital products. The first wave of case studies will land here soon — and trust us, they'll be worth the wait.
+            </p>
           </div>
-        </div>
 
-        {/* Shakuro "See more work" Bottom Pill Button */}
-        <div className="mt-12 sm:mt-16 text-center">
-          <Link
-            to="/portfolio"
-            className="btn-pill-secondary group inline-flex"
-          >
-            <span>See more work</span>
-            <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+          {/* Skeleton Preview Cards (teasing that projects are coming) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-[780px] mx-auto pt-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className={`rounded-[20px] md:rounded-[24px] bg-[#f6f7f9] border border-zinc-100 overflow-hidden ${
+                  i % 2 === 0 ? 'sm:mt-6' : ''
+                }`}
+              >
+                {/* Skeleton Image */}
+                <div className="aspect-[4/3] bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-100 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_2s_infinite] -translate-x-full" />
+                </div>
+                {/* Skeleton Text Lines */}
+                <div className="p-5 space-y-3">
+                  <div className="h-3 w-20 rounded-full bg-zinc-200/80" />
+                  <div className="h-4 w-3/4 rounded-full bg-zinc-200/60" />
+                  <div className="h-3 w-full rounded-full bg-zinc-100" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link
+              to="/contact"
+              className="btn-pill-primary group inline-flex"
+            >
+              <span>Be our first case study</span>
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <Link
+              to="/service"
+              className="btn-pill-secondary group inline-flex"
+            >
+              <span>Explore our services</span>
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

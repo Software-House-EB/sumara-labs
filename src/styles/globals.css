@@ -59,3 +59,13 @@
     @apply relative inline-flex items-center justify-center rounded-[48px] border border-white/40 text-white bg-transparent px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-white hover:text-[#0f0f11] active:scale-[0.98];
   }
 }
+
+/* Shimmer animation for skeleton loading cards */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
