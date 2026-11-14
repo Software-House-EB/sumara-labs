@@ -105,17 +105,10 @@ export default function AISupportSection() {
             </div>
 
             {/* Top Bar of the Card */}
-            <div className="relative z-10 flex items-center justify-between mb-8 pb-5 border-b border-zinc-100">
+            <div className="relative z-10 flex items-center mb-8 pb-5 border-b border-zinc-100">
               <span className="text-xs font-mono uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-[#0f0f11] text-white">
                 Instant Build
               </span>
-              <Link
-                to="/service"
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#1649FF] hover:text-blue-700 transition-colors group/link"
-              >
-                <span>View all services</span>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-              </Link>
             </div>
 
             {/* Content Flex / Grid */}
@@ -192,8 +185,11 @@ export default function AISupportSection() {
             </div>
           </div>
 
-          {/* Centered Button to Services Page */}
-          <div className="mt-8 sm:mt-10 flex justify-center">
+          {/* Centered Button & Description to Services Page */}
+          <div className="mt-10 sm:mt-14 flex flex-col items-center text-center gap-4">
+            <p className="text-sm sm:text-base text-[#55555c] max-w-lg">
+              Want another option such as light development, custom web apps, or complex business platforms?
+            </p>
             <Link
               to="/service"
               className="btn-pill-secondary group/btn inline-flex items-center gap-2"
