@@ -188,7 +188,7 @@ export default function AISupportSection() {
           {/* Centered Button & Description to Services Page */}
           <div className="mt-10 sm:mt-14 flex flex-col items-center text-center gap-4">
             <p className="text-sm sm:text-base text-[#55555c] max-w-lg">
-              Want another option such as light development, custom web apps, or complex business platforms?
+              Want another option such as complex business platforms, game development, or even AI video content?
             </p>
             <Link
               to="/service"

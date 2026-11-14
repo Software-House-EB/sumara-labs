@@ -4,36 +4,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowUpRight } from 'lucide-react';
 import RollingText from '../ui/RollingText';
 
-const processSteps = [
+const whyChoosePoints = [
   {
     number: '01',
-    title: 'Brand strategy & Discovery',
-    desc: 'We clarify the core business model, audit existing codebases and APIs, define high-level system architecture, and lay out predictable milestone schedules.'
+    title: 'Multinational company experience',
+    desc: 'Our founders bring proven experience from leading multinational companies, combining deep business strategy with robust engineering skills to deliver high impact products.'
   },
   {
     number: '02',
-    title: 'UI & UX design',
-    desc: 'Translating product workflows into pixel-perfect Figma components, clickable prototypes, and unified design token systems before backend coding begins.'
+    title: 'Affordable and worth the price',
+    desc: 'Premium software development without enterprise markups. We provide transparent, accessible pricing designed to give you maximum value for every investment.'
   },
   {
     number: '03',
-    title: 'Full-cycle engineering',
-    desc: 'High-velocity two-week sprints. Continuous deployment to staging environments, automated test coverage, and transparent git repository access.'
+    title: 'Trusted partner',
+    desc: 'We take genuine ownership of your product, maintaining total transparency, predictable delivery schedules, and clear communication from kickoff to launch.'
   },
   {
     number: '04',
-    title: 'AI-assisted product development',
-    desc: 'Integrating enterprise LLMs, fine-tuned private models, vector embeddings, and autonomous agent loops into functional production features.'
+    title: 'Free warranty and feedback',
+    desc: 'We stand by everything we build with complimentary post launch warranty coverage, free bug fixes, and open feedback rounds so your product launches with complete peace of mind.'
   },
   {
     number: '05',
-    title: 'Support & maintenance (SRE)',
-    desc: 'Rigorous end-to-end load testing, penetration testing, automated telemetry alerts, and 30 to 60 days of post-launch warranty.'
-  },
-  {
-    number: '06',
-    title: 'Scale & grow',
-    desc: 'Continuous iteration and dedicated senior squads to scale user throughput, optimize database queries, and support international expansion.'
+    title: '24/7 dedicated support',
+    desc: 'Tech challenges and urgent needs do not stop after business hours. Our team is available around the clock to assist, monitor, and keep your systems operating smoothly.'
   }
 ];
 
@@ -49,10 +44,10 @@ export default function ProcessSection() {
               ======================================================== */}
           <div className="md:col-span-5 space-y-6">
             <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-medium tracking-tight text-[#0f0f11] leading-[1.12]">
-              How we bring your ideas to life
+              Why Choose Sumara Labs?
             </h2>
             <p className="text-base sm:text-lg text-[#55555c] leading-relaxed">
-              No complicated jargon or endless delays. We follow modern software development best practices to make building your product smooth, fast, and hassle-free.
+              No complicated jargon or endless delays. We follow modern software development best practices to make building your product smooth, fast, and completely stress free.
             </p>
 
             <div className="pt-2">
@@ -70,7 +65,7 @@ export default function ProcessSection() {
               RIGHT COLUMN: Aligned at top horizontally with Left
               ======================================================== */}
           <div className="md:col-span-7 divide-y divide-zinc-200">
-            {processSteps.map((step, idx) => {
+            {whyChoosePoints.map((step, idx) => {
               const isOpen = openStep === idx;
               return (
                 <div
@@ -82,9 +77,8 @@ export default function ProcessSection() {
                     className="w-full text-left flex items-start justify-between gap-4 group cursor-pointer"
                   >
                     <div className="flex items-baseline gap-4 sm:gap-6">
-                      <span className={`text-sm font-mono font-medium transition-colors ${
-                        isOpen ? 'text-[#1649FF]' : 'text-zinc-400'
-                      }`}>
+                      <span className={`text-sm font-mono font-medium transition-colors ${isOpen ? 'text-[#1649FF]' : 'text-zinc-400'
+                        }`}>
                         {step.number}
                       </span>
                       <h3 className="text-xl sm:text-2xl font-medium text-[#0f0f11] group-hover:text-[#1649FF] transition-colors leading-tight">
