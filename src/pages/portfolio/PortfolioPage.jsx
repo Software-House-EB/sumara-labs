@@ -12,10 +12,10 @@ export default function PortfolioPage() {
             Our works
           </p>
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[82px] font-medium tracking-tight-2 text-[#0f0f11] leading-[1.08] max-w-[1040px]">
-            No work to show yet — but that's about to change.
+            No work to show yet, but that's about to change.
           </h1>
           <p className="text-base sm:text-lg text-[#55555c] mt-5 leading-relaxed max-w-[680px]">
-            We just launched Sumara Labs and haven't published our first project yet. Our engineers are building right now — and these slots will feature our first releases.
+            We just launched Sumara Labs and haven't published our first project yet. Our engineers are building right now, and these slots will feature our first releases.
           </p>
         </div>
 

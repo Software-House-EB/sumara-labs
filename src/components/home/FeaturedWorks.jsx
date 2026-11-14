@@ -13,7 +13,7 @@ export default function FeaturedWorks() {
               Our works
             </p>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#0f0f11] leading-[1.1]">
-              No projects here yet —<br className="hidden sm:block" /> but we're on it
+              No projects here yet,<br className="hidden sm:block" /> but we're on it
             </h2>
             <p className="text-base sm:text-lg text-[#55555c] leading-relaxed max-w-[580px] mx-auto">
               We just launched and haven't shipped our first project yet. But our engineers are ready, our stack is sharp, and this space won't stay empty for long.
