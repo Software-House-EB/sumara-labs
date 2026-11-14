@@ -33,31 +33,8 @@ export default function FeaturedWorks() {
             </p>
           </div>
 
-          {/* Skeleton Preview Cards (teasing that projects are coming) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 max-w-[780px] mx-auto pt-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className={`rounded-[20px] md:rounded-[24px] bg-[#f6f7f9] border border-zinc-100 overflow-hidden ${
-                  i % 2 === 0 ? 'sm:mt-6' : ''
-                }`}
-              >
-                {/* Skeleton Image */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-100 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_2s_infinite] -translate-x-full" />
-                </div>
-                {/* Skeleton Text Lines */}
-                <div className="p-5 space-y-3">
-                  <div className="h-3 w-20 rounded-full bg-zinc-200/80" />
-                  <div className="h-4 w-3/4 rounded-full bg-zinc-200/60" />
-                  <div className="h-3 w-full rounded-full bg-zinc-100" />
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* CTA */}
-          <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/contact"
               className="btn-pill-primary group inline-flex"

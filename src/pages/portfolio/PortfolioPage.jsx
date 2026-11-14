@@ -17,7 +17,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* Fun Empty State */}
-        <div className="max-w-[1000px] mx-auto pt-4 sm:pt-8">
+        <div className="max-w-[860px] mx-auto pt-4 sm:pt-8">
           {/* Animated icon cluster */}
           <div className="flex items-center justify-center gap-3 sm:gap-5 mb-10 sm:mb-14">
             {[
@@ -39,7 +39,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Main message */}
-          <div className="text-center space-y-4 max-w-[680px] mx-auto mb-12 sm:mb-16">
+          <div className="text-center space-y-4 max-w-[680px] mx-auto mb-10 sm:mb-14">
             <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight text-[#0f0f11] leading-[1.15]">
               We're cooking up something special 🍳
             </h2>
@@ -51,42 +51,8 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          {/* Skeleton Preview Grid (Teasing Future Projects) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-14 sm:mb-18">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className={`rounded-[20px] md:rounded-[28px] bg-[#f6f7f9] border border-zinc-100 overflow-hidden ${
-                  i % 2 === 0 ? 'md:mt-10' : ''
-                }`}
-              >
-                {/* Skeleton Image */}
-                <div className="aspect-square bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-100 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_2.5s_infinite] -translate-x-full" />
-                  {/* Fun placeholder label inside skeleton */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-zinc-300 text-xs font-mono uppercase tracking-widest select-none">
-                      Case Study #{String(i).padStart(2, '0')}
-                    </span>
-                  </div>
-                </div>
-                {/* Skeleton Text Lines */}
-                <div className="p-5 sm:p-6 space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-[3px] h-8 rounded-full bg-zinc-200" />
-                    <div className="space-y-2 flex-1">
-                      <div className="h-3 w-24 rounded-full bg-zinc-200/80" />
-                      <div className="h-4 w-3/4 rounded-full bg-zinc-200/60" />
-                    </div>
-                  </div>
-                  <div className="h-3 w-full rounded-full bg-zinc-100 ml-5" />
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* CTA Row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/contact"
               className="btn-pill-primary group inline-flex"
