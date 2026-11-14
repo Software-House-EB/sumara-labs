@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Bot, Gamepad2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Bot, Gamepad2, Sparkles, Check } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 export default function AISupportSection() {
   return (
@@ -91,6 +92,117 @@ export default function AISupportSection() {
             </div>
           </li>
         </ul>
+
+        {/* Featured Instant Build Card (< 24h) */}
+        <div className="mt-14 sm:mt-18 lg:mt-20">
+          <div className="rounded-[24px] sm:rounded-[28px] p-7 sm:p-10 lg:p-12 bg-white border border-zinc-200/90 shadow-xl shadow-black/[0.03] relative overflow-hidden">
+            {/* Background Watermark */}
+            <div
+              className="absolute right-4 sm:right-10 top-2 lg:top-4 pointer-events-none select-none text-[100px] sm:text-[160px] lg:text-[220px] font-bold tracking-tighter text-black/[0.04] leading-none z-0 whitespace-nowrap"
+              aria-hidden="true"
+            >
+              &lt; 24h
+            </div>
+
+            {/* Top Bar of the Card */}
+            <div className="relative z-10 flex items-center justify-between mb-8 pb-5 border-b border-zinc-100">
+              <span className="text-xs font-mono uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-[#0f0f11] text-white">
+                Instant Build
+              </span>
+              <Link
+                to="/service"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#1649FF] hover:text-blue-700 transition-colors group/link"
+              >
+                <span>View all services</span>
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              </Link>
+            </div>
+
+            {/* Content Flex / Grid */}
+            <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-stretch">
+              {/* Left Column: Title, Description, & Deliverables */}
+              <div className="flex-1 space-y-6">
+                <div className="flex gap-4 items-start">
+                  <div className="w-[3px] rounded-full bg-[#1649FF] shrink-0 self-stretch my-1" />
+                  <div className="space-y-2">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-[#0f0f11]">
+                      Instant App Build & Launch
+                    </h3>
+                    <p className="text-sm sm:text-base text-[#55555c] leading-relaxed max-w-2xl">
+                      Build and launch your production web application in less than a day. Specifically designed for founders validating an MVP, urgent campaign launches, and next day investor demos.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Scope of Deliverables Checklist */}
+                <div className="space-y-3 pt-1">
+                  <p className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold">
+                    Scope of Deliverables
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      'Complete responsive web application',
+                      'Interactive UI/UX with custom layout',
+                      'Form integrations, database & API routing',
+                      'Production deployment on custom domain',
+                      '100% full source code ownership',
+                      'Realtime communication & live demo handover'
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#55555c]">
+                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Pricing & Instant Build Action */}
+              <div className="w-full lg:w-[320px] shrink-0 p-6 sm:p-8 rounded-[20px] bg-zinc-50 border border-zinc-200/80 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <div className="pb-5 border-b border-zinc-200/60">
+                    <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">
+                      Starting from
+                    </span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-xs font-bold text-zinc-400">Rp</span>
+                      <span className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0f0f11]">
+                        1.500.000
+                      </span>
+                      <span className="text-xs text-zinc-500 ml-1">/ Sprint</span>
+                    </div>
+                    <p className="text-xs text-zinc-500 mt-2 leading-relaxed">
+                      Fixed transparent scope agreed prior to kickoff. Zero hidden fees.
+                    </p>
+                  </div>
+
+                  <p className="text-[11px] text-zinc-400 font-mono">
+                    Kickoff begins immediately after scope approval
+                  </p>
+                </div>
+
+                <Link
+                  to="/contact?package=Instant%20App%20Build%20(%3C%2024%20Hours)"
+                  className="w-full py-3.5 rounded-[48px] bg-[#0f0f11] text-white hover:bg-black font-semibold text-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 active:translate-y-0 active:scale-95 flex items-center justify-center gap-2 group/btn"
+                >
+                  <RollingText text="Select Instant Build" />
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Centered Button to Services Page */}
+          <div className="mt-8 sm:mt-10 flex justify-center">
+            <Link
+              to="/service"
+              className="btn-pill-secondary group/btn inline-flex items-center gap-2"
+            >
+              <RollingText text="Explore our services" />
+              <ArrowUpRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
