@@ -42,7 +42,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* CTA Row */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-20 sm:mb-28">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-20 sm:mb-28">
           <Link
             to="/contact"
             className="btn-pill-primary group inline-flex"
