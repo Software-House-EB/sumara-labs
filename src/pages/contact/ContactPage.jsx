@@ -12,6 +12,7 @@ import {
   MessageCircle,
   X
 } from 'lucide-react';
+import RollingText from '../../components/ui/RollingText';
 
 export default function ContactPage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -127,9 +128,9 @@ export default function ContactPage() {
                       message: ''
                     });
                   }}
-                  className="rounded-full bg-[#0f0f11] text-white px-7 py-3 text-sm font-medium hover:bg-black transition-colors"
+                  className="rounded-full bg-[#0f0f11] text-white px-7 py-3 text-sm font-medium hover:bg-black transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 active:translate-y-0 active:scale-95 group/btn"
                 >
-                  Send another message
+                  <RollingText text="Send another message" />
                 </button>
               </div>
             ) : (
@@ -261,10 +262,10 @@ export default function ContactPage() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="rounded-full bg-[#1649FF] hover:bg-[#0d3bf0] text-white px-9 py-3.5 text-sm sm:text-base font-semibold transition-all duration-300 shadow-lg shadow-blue-500/25 active:scale-[0.98] inline-flex items-center gap-2 group cursor-pointer"
+                    className="rounded-full bg-[#1649FF] hover:bg-[#0d3bf0] text-white px-9 py-3.5 text-sm sm:text-base font-semibold transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/35 active:translate-y-0 active:scale-95 inline-flex items-center gap-2 group/btn cursor-pointer"
                   >
-                    <span>Submit</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <RollingText text="Submit" />
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   </button>
                 </div>
               </form>

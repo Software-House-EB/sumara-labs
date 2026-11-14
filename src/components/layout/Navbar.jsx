@@ -4,33 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, X } from 'lucide-react';
 import logoDark from '../../assets/images/main-logo.png';
 import logoWhite from '../../assets/images/white-logo.png';
-
-// Rolling text hover effect (Aaron Iker / Dribbble style)
-function RollingText({ text, className = '' }) {
-  return (
-    <span className={`inline-flex items-center overflow-hidden leading-none ${className}`}>
-      {text.split('').map((char, i) => (
-        <span
-          key={i}
-          className="relative inline-block h-[1.15em] overflow-hidden leading-[1.15em]"
-        >
-          <span
-            className="block leading-[1.15em] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full"
-            style={{ transitionDelay: `${i * 25}ms` }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </span>
-          <span
-            className="absolute top-0 left-0 block leading-[1.15em] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0"
-            style={{ transitionDelay: `${i * 25}ms` }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </span>
-        </span>
-      ))}
-    </span>
-  );
-}
+import RollingText from '../ui/RollingText';
 
 const navItems = [
   { label: 'Works', path: '/portfolio', count: '06' },
@@ -263,9 +237,10 @@ export default function Navbar() {
                     <Link
                       to="/contact"
                       onClick={() => setMenuOpen(false)}
-                      className="inline-flex items-center justify-center rounded-[48px] bg-[#0f0f11] text-white hover:bg-black px-8 py-3.5 text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md"
+                      className="group/btn inline-flex items-center justify-center gap-1.5 rounded-[48px] bg-[#0f0f11] text-white hover:bg-black px-8 py-3.5 text-sm font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-95 shadow-md"
                     >
-                      Get in touch
+                      <RollingText text="Get in touch" />
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </Link>
                   </motion.div>
 

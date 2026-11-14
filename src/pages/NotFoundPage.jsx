@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Home, Compass } from 'lucide-react';
+import RollingText from '../components/ui/RollingText';
 
 export default function NotFoundPage() {
   return (
@@ -24,10 +25,10 @@ export default function NotFoundPage() {
         <div className="pt-4 flex items-center justify-center gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-zinc-950 font-bold text-sm hover:bg-primary-500 hover:text-white transition-all shadow-xl"
+            className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-zinc-950 font-bold text-sm hover:bg-zinc-100 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:translate-y-0 active:scale-95"
           >
-            <Home className="w-4 h-4" />
-            <span>Return to Flagship</span>
+            <Home className="w-4 h-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5" />
+            <RollingText text="Return to Flagship" />
           </Link>
         </div>
       </div>

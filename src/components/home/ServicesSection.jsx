@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Cpu, Code2, Smartphone, Cloud, Plus, Minus, CheckCircle } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 const serviceDisciplines = [
   {
@@ -91,10 +92,10 @@ export default function ServicesSection() {
 
           <Link
             to="/service"
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white font-medium text-sm transition-all"
+            className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-white font-medium text-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 active:translate-y-0 active:scale-95"
           >
-            <span>View Pricing Packages</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <RollingText text="View Pricing Packages" />
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
           </Link>
         </div>
 

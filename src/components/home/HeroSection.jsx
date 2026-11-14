@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 export default function HeroSection() {
   return (
@@ -66,17 +67,17 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
             <Link
               to="/contact"
-              className="btn-pill-primary group"
+              className="btn-pill-primary group/btn"
             >
-              <span>Let's discuss your project</span>
-              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <RollingText text="Let's discuss your project" />
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
             </Link>
 
             <a
               href="#selected-work"
-              className="btn-pill-secondary"
+              className="btn-pill-secondary group/btn"
             >
-              Explore our work
+              <RollingText text="Explore our work" />
             </a>
           </div>
         </div>

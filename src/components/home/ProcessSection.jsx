@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowUpRight } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 const processSteps = [
   {
@@ -57,10 +58,10 @@ export default function ProcessSection() {
             <div className="pt-2">
               <Link
                 to="/contact"
-                className="btn-pill-primary group inline-flex"
+                className="btn-pill-primary group/btn inline-flex"
               >
-                <span>Let's discuss your project</span>
-                <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <RollingText text="Let's discuss your project" />
+                <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Link>
             </div>
           </div>

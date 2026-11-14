@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Star } from 'lucide-react';
 import whiteLogo from '../../assets/images/white-logo.png';
+import RollingText from '../ui/RollingText';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,17 +21,17 @@ export default function Footer() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-[48px] bg-white text-zinc-950 hover:bg-zinc-200 px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
+                className="inline-flex items-center justify-center rounded-[48px] bg-white text-zinc-950 hover:bg-zinc-100 px-8 py-4 text-base font-semibold transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:translate-y-0 active:scale-95 group/btn"
               >
-                <span>Start your project</span>
-                <ArrowUpRight className="w-5 h-5 ml-2" />
+                <RollingText text="Start your project" />
+                <ArrowUpRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Link>
 
               <a
                 href="mailto:sumaralabs@gmail.com"
-                className="inline-flex items-center justify-center rounded-[48px] border border-white/20 text-white hover:border-white px-7 py-4 text-base font-medium transition-all duration-300 hover:bg-white/5"
+                className="inline-flex items-center justify-center rounded-[48px] border border-white/20 text-white hover:border-white px-7 py-4 text-base font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-white/5 active:translate-y-0 active:scale-95 group/btn"
               >
-                sumaralabs@gmail.com
+                <RollingText text="sumaralabs@gmail.com" />
               </a>
             </div>
           </div>

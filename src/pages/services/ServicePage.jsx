@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Minus, ArrowUpRight, Check, Clock } from 'lucide-react';
 import { packagesData } from '../../data/projectsData';
+import RollingText from '../../components/ui/RollingText';
 
 const faqs = [
   {
@@ -121,10 +122,10 @@ export default function ServicePage() {
 
               <Link
                 to="/contact?package=Instant%20App%20Build%20(%3C%2024%20Hours)"
-                className="w-full py-3.5 rounded-[48px] bg-[#0f0f11] text-white hover:bg-black font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full py-3.5 rounded-[48px] bg-[#0f0f11] text-white hover:bg-black font-semibold text-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 active:translate-y-0 active:scale-95 flex items-center justify-center gap-2 group/btn"
               >
-                <span>Select Instant Build</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <RollingText text="Select Instant Build" />
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
               </Link>
             </div>
           </div>
@@ -196,14 +197,14 @@ export default function ServicePage() {
 
                 <Link
                   to={`/contact?package=${encodeURIComponent(pkg.title)}`}
-                  className={`w-full py-3.5 rounded-[48px] text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                  className={`w-full py-3.5 rounded-[48px] text-sm font-semibold transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-95 flex items-center justify-center gap-2 group/btn ${
                     pkg.isPopular
-                      ? 'bg-[#0f0f11] text-white hover:bg-black'
-                      : 'border border-zinc-300 text-zinc-950 hover:border-black'
+                      ? 'bg-[#0f0f11] text-white hover:bg-black hover:shadow-black/20'
+                      : 'border border-zinc-300 text-zinc-950 hover:border-black hover:shadow-black/10'
                   }`}
                 >
-                  <span>Select {pkg.title}</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <RollingText text={`Select ${pkg.title}`} />
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </Link>
               </div>
             ))}

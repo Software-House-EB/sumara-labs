@@ -44,20 +44,41 @@
   }
 
   .btn-pill-primary {
-    @apply relative inline-flex items-center justify-center rounded-[48px] bg-[#0f0f11] text-white px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-black active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center rounded-[48px] bg-[#0f0f11] text-white px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 hover:bg-black active:translate-y-0 active:scale-95;
   }
 
   .btn-pill-secondary {
-    @apply relative inline-flex items-center justify-center rounded-[48px] border border-[#0f0f11] text-[#0f0f11] bg-transparent px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-[#0f0f11] hover:text-white active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center rounded-[48px] border border-[#0f0f11] text-[#0f0f11] bg-transparent px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10 hover:bg-[#0f0f11] hover:text-white active:translate-y-0 active:scale-95;
   }
 
   .btn-pill-white {
-    @apply relative inline-flex items-center justify-center rounded-[48px] bg-white text-[#0f0f11] px-7 py-3.5 text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-zinc-200 active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center rounded-[48px] bg-white text-[#0f0f11] px-7 py-3.5 text-sm sm:text-base font-semibold transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 hover:bg-zinc-100 active:translate-y-0 active:scale-95;
   }
 
   .btn-pill-light-outline {
-    @apply relative inline-flex items-center justify-center rounded-[48px] border border-white/40 text-white bg-transparent px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-white hover:text-[#0f0f11] active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center rounded-[48px] border border-white/40 text-white bg-transparent px-7 py-3.5 text-sm sm:text-base font-medium transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-white/20 hover:bg-white hover:text-[#0f0f11] active:translate-y-0 active:scale-95;
   }
+}
+
+/* Universal rolling text animations triggered on button or link hover */
+.btn-pill-primary:hover [data-rolling-top],
+.btn-pill-secondary:hover [data-rolling-top],
+.btn-pill-white:hover [data-rolling-top],
+.btn-pill-light-outline:hover [data-rolling-top],
+.group\/btn:hover [data-rolling-top],
+button:hover [data-rolling-top],
+a:hover [data-rolling-top] {
+  transform: translateY(-100%);
+}
+
+.btn-pill-primary:hover [data-rolling-bottom],
+.btn-pill-secondary:hover [data-rolling-bottom],
+.btn-pill-white:hover [data-rolling-bottom],
+.btn-pill-light-outline:hover [data-rolling-bottom],
+.group\/btn:hover [data-rolling-bottom],
+button:hover [data-rolling-bottom],
+a:hover [data-rolling-bottom] {
+  transform: translateY(0);
 }
 
 /* Shimmer animation for skeleton loading cards */

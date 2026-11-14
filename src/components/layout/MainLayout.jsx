@@ -6,6 +6,7 @@ import Lenis from 'lenis';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import PageTransition from '../ui/PageTransition';
+import RollingText from '../ui/RollingText';
 
 export default function MainLayout() {
   const location = useLocation();
@@ -69,12 +70,10 @@ export default function MainLayout() {
             <Link
               to="/contact"
               aria-label="Let's talk"
-              className="group relative inline-flex items-center gap-1.5 h-9 sm:h-10 px-4 sm:px-4.5 rounded-[48px] bg-white/95 backdrop-blur-md text-[#0f0f11] border border-zinc-200/90 shadow-md shadow-black/5 hover:border-black hover:bg-black hover:text-white transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+              className="group/btn relative inline-flex items-center gap-1.5 h-9 sm:h-10 px-4 sm:px-4.5 rounded-[48px] bg-white/95 backdrop-blur-md text-[#0f0f11] border border-zinc-200/90 shadow-md shadow-black/5 hover:border-black hover:bg-black hover:text-white transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:scale-95"
             >
-              <span className="text-xs sm:text-[13px] font-medium leading-none">
-                Let's talk
-              </span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <RollingText text="Let's talk" className="text-xs sm:text-[13px] font-medium" />
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
             </Link>
           </motion.div>
         )}

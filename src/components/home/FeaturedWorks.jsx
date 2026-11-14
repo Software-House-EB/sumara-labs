@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 export default function FeaturedWorks() {
   return (
@@ -46,17 +47,17 @@ export default function FeaturedWorks() {
           <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/contact"
-              className="btn-pill-primary group inline-flex"
+              className="btn-pill-primary group/btn inline-flex"
             >
-              <span>Work with us</span>
-              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <RollingText text="Work with us" />
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
             </Link>
             <Link
               to="/service"
-              className="btn-pill-secondary group inline-flex"
+              className="btn-pill-secondary group/btn inline-flex"
             >
-              <span>Explore our services</span>
-              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <RollingText text="Explore our services" />
+              <ArrowUpRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
             </Link>
           </div>
         </div>

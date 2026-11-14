@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight, CheckCircle2, Building, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import RollingText from './RollingText';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
   useEffect(() => {
@@ -158,10 +159,10 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                 <Link
                   to="/contact"
                   onClick={onClose}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[48px] bg-[#0f0f11] hover:bg-black text-white font-medium text-sm transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[48px] bg-[#0f0f11] hover:bg-black text-white font-medium text-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/20 active:translate-y-0 active:scale-95 group/btn"
                 >
-                  <span>Discuss This Architecture</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <RollingText text="Discuss This Architecture" />
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </Link>
               </div>
             </div>

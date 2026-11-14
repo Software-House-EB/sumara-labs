@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator, ArrowRight, CheckCircle2, Sparkles, Send, ShieldCheck } from 'lucide-react';
+import RollingText from '../ui/RollingText';
 
 const projectTypes = [
   { id: 'web', label: 'Web Application / SaaS', baseTime: '4-8 wks' },
@@ -230,10 +231,10 @@ export default function CostEstimatorSection() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-xl shadow-primary-600/30 hover:scale-105 active:scale-95"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-bold text-sm sm:text-base transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-600/30 active:translate-y-0 active:scale-95 group/btn cursor-pointer"
                 >
-                  <span>Generate Custom Proposal</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <RollingText text="Generate Custom Proposal" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </button>
               </div>
             </form>

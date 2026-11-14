@@ -135,7 +135,7 @@ export default function SocialProofBar() {
 
         {/* Trusted By: Auto Infinite Horizontal Scrolling Marquee */}
         <div className="mt-14 sm:mt-18 pt-10 sm:pt-14">
-          <p className="text-center text-sm sm:text-base text-[#8e8e93] font-semibold mb-12 sm:mb-16">
+          <p className="text-center text-sm sm:text-base text-[#8e8e93] font-semibold mb-12 sm:mb-8">
             Trusted by
           </p>
 
