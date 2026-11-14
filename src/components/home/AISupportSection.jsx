@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Cpu, Bot, Sparkles, Terminal } from 'lucide-react';
+import { ArrowUpRight, Bot, Gamepad2, Sparkles } from 'lucide-react';
 
 export default function AISupportSection() {
   return (
@@ -9,7 +9,7 @@ export default function AISupportSection() {
         {/* Header Block */}
         <div className="mb-10 sm:mb-14 flex flex-col items-center text-center max-w-[900px] mx-auto gap-4">
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-medium tracking-tight text-[#0f0f11] leading-[1.12]">
-            AI support for smarter product development
+            Building faster with the latest AI tech & trends
           </h2>
           <p className="text-base sm:text-lg lg:text-[20px] text-[#55555c] leading-relaxed">
             Sumara Labs uses AI where it makes product work clearer, faster, and more practical: early exploration, prototyping, documentation, QA, smarter workflows, and features that process text, images, voice, data, or user intent. Product logic, UX, architecture, security, and launch quality stay in human hands.
@@ -36,7 +36,7 @@ export default function AISupportSection() {
                 to="/service"
                 className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#0f0f11] hover:text-primary transition-colors group"
               >
-                <span>Explore AI development services</span>
+                <span>Explore our AI workflow</span>
                 <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -46,13 +46,13 @@ export default function AISupportSection() {
           <li className="relative flex flex-col justify-between border-l border-zinc-200 pl-6 sm:pl-8">
             <div>
               <div className="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center text-zinc-800 mb-6">
-                <Sparkles className="w-5 h-5" />
+                <Gamepad2 className="w-5 h-5" />
               </div>
               <h3 className="text-xl sm:text-2xl font-medium text-[#0f0f11] mb-3 leading-snug">
-                AI-powered features in products
+                We can build almost anything
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                Build native intelligence directly into your user experience: intelligent conversational search, multi-modal vision parsing, real-time audio transcriptions, and automated triage pipelines.
+                From modern websites and digital wedding invitations to interactive Roblox games, we have hands-on experience developing diverse digital products tailored to your exact vision.
               </p>
             </div>
             <div>
@@ -60,7 +60,7 @@ export default function AISupportSection() {
                 to="/service"
                 className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#0f0f11] hover:text-primary transition-colors group"
               >
-                <span>Build AI features with Python</span>
+                <span>See what we can build</span>
                 <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -70,21 +70,21 @@ export default function AISupportSection() {
           <li className="relative flex flex-col justify-between border-l border-zinc-200 pl-6 sm:pl-8">
             <div>
               <div className="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center text-zinc-800 mb-6">
-                <Terminal className="w-5 h-5" />
+                <Sparkles className="w-5 h-5" />
               </div>
               <h3 className="text-xl sm:text-2xl font-medium text-[#0f0f11] mb-3 leading-snug">
-                Private enclaves & custom RAG
+                With AI, the sky is the limit
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                Enterprise compliance guaranteed. We engineer secure HIPAA and SOC2 compliant private model enclaves where sensitive company data never leaks into public foundation models.
+                More than standard development: we create AI content videos, automate workflows, and tackle any custom tech request. Have an idea? Feel free to consult with us directly or message us on social media.
               </p>
             </div>
             <div>
               <Link
-                to="/service"
+                to="/contact"
                 className="inline-flex items-center text-xs sm:text-sm font-semibold text-[#0f0f11] hover:text-primary transition-colors group"
               >
-                <span>Add AI to React products</span>
+                <span>Consult with us on socials</span>
                 <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -94,4 +94,3 @@ export default function AISupportSection() {
     </section>
   );
 }
-
