@@ -28,7 +28,7 @@ export default function AISupportSection() {
                 AI in the delivery process
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                We use AI for rapid discovery, architectural prototyping, automated documentation, synthetic test generation, and QA, helping teams ship weeks ahead of schedule without sacrificing code quality.
+                We use AI for rapid prototyping and QA, helping you ship clean products weeks ahead of schedule.
               </p>
             </div>
             <div>
@@ -52,7 +52,7 @@ export default function AISupportSection() {
                 We can build almost anything
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                From modern websites and digital wedding invitations to interactive Roblox games, we have hands-on experience developing diverse digital products tailored to your exact vision.
+                From websites and digital invitations to Roblox games, we build tailored experiences for any idea.
               </p>
             </div>
             <div>
@@ -76,7 +76,7 @@ export default function AISupportSection() {
                 With AI, the sky is the limit
               </h3>
               <p className="text-sm sm:text-base text-[#55555c] leading-relaxed mb-8">
-                More than standard development: we create AI content videos, automate workflows, and tackle any custom tech request. Have an idea? Feel free to consult with us directly or message us on social media.
+                AI video content, workflow automation, and custom tech solutions. Message us anytime on social media.
               </p>
             </div>
             <div>
